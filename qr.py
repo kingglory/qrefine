@@ -152,12 +152,15 @@ refine {
     .type = float
   rmsd_tolerance = 0.01
     .type = float
+  opt_log = False
+    .type = bool
+    .help = additional output of the L-BFGS optimizer
 }
 
 parallel {
   method = *multiprocessing slurm pbs sge lsf threading
     .type = choice(multi=False)
-    .help = type of parallel mode
+    .help = type of parallel mode \
             and efficient method of processes on the current computer. The others \
             are queueing protocols with the expection of threading which is not a \
             safe choice.
